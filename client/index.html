@@ -74,8 +74,9 @@
         <script>
             var n1 = new Negociacao(new Date(), 5, 700);
 
-            n1.quantidade = 1000; // A instrução é ignorada, sem mensagem de erro
-            n1._quantidade = 5000; // Nada nos impede de fazermos isso, apenas nossa convenção
+            Object.freeze(n1);
+
+            n1._quantidade = 100000000000; // Não consegue modificar e nenhum erro acontece
 
             console.log(n1.quantidade);
             console.log(n1.data);

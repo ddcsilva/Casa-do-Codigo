@@ -73,10 +73,14 @@
         <script src="app/domain/negociacao/Negociacao.js"></script>
         <script>
             var n1 = new Negociacao(new Date(), 5, 700);
-            console.log(n1.getQuantidade());
-            console.log(n1.getData());
-            console.log(n1.getValor());
-            console.log(n1.getVolume());
+
+            n1.quantidade = 1000; // A instrução é ignorada, sem mensagem de erro
+            n1._quantidade = 5000; // Nada nos impede de fazermos isso, apenas nossa convenção
+
+            console.log(n1.quantidade);
+            console.log(n1.data);
+            console.log(n1.valor);
+            console.log(n1.volume);
         </script>
     </body>
 </html>

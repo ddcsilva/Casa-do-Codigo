@@ -1,9 +1,11 @@
 class Negociacao {
     constructor(data, quantidade, valor) {
-        // Cada parâmetro recebido será atribuído às propriedades da classe
-        this._data = data;
-        this._quantidade = quantidade;
-        this._valor = valor;
+        Object.assign(this, {
+            _data: new Date(data.getTime()),
+            _quantidade: quantidade,
+            _valor: valor,
+        });
+
         Object.freeze(this);
     }
 
@@ -12,7 +14,7 @@ class Negociacao {
     }
 
     get data() {
-        return this._data;
+        return new Date(this._data.getTime());
     }
 
     get quantidade() {

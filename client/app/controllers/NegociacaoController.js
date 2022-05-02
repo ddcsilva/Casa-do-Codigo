@@ -5,6 +5,17 @@ class NegociacaoController {
         // Cancelando a submissão do formulário
         event.preventDefault();
 
-        alert("Chamei ação no controller");
+        // A ideia é que $ seja o querySelector
+        // Realizando o bind, $ mantém document como seu contexto this
+        let $ = document.querySelector.bind(document);
+
+        // Buscando os elementos
+        let inputData = $("#data");
+        let inputQuantidade = $("#quantidade");
+        let inputValor = $("#valor");
+
+        console.log(inputData.value);
+        console.log(parseInt(inputQuantidade.value));
+        console.log(parseFloat(inputValor.value));
     }
 }
